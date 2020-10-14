@@ -1,1 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --color-primary: #5268f2;
+  --theme-black: #273c63;
+  --theme-font: 'Roboto', sans-serif;
+  --shadow-theme: 0 .5rem 1rem rgba(0,0,0,.15);
+  --box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: var(--theme-font) }
+*{
+  scrollbar-width: thin !important;
+}
+::-webkit-scrollbar{
+  width: 6px !important;
+  height: 6px !important;
+  background-color: var(--secondary-color) !important;
+  -moz-appearance: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px !important;
+  width: 6px !important;
+  height: 6px !important;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1) !important;
+  background-color: #dee4e8 !important;
+  -moz-appearance: none;
+}
+
+body{
+  line-height: 1.6;
+  /* font-size: 1.2rem; */
+}
+li{
+  list-style-type: none !important;
+}
+.h-100vh{
+  height: 100vh !important;
+}
+.r-corner{
+  border-radius: 10px;
+}
+.media-container{
+  max-width: 1280px !important;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.round-corner{
+  border-radius: 10px;
+}
+.theme-bg {
+  background-color: var(--color-primary);
+}
+.theme-text{
+  color: var(--color-primary);
+}
+.section{
+  padding: 5% 0;
+}
+.brand-logo{
+  max-height: 65px;
+  width: auto;
+  height: 100%;
+  padding: 0 15px;
+  padding-bottom: 0;
+}
+
+/* loginpage */
+.box-container{
+  width: 100%;
+  max-width: 650px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.small-text{
+  font-size: 14px;
+}
+.small-text ion-checkbox{
+  margin-right: 3px;
+}
+.icon-link{
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+.icon-link img{
+  width: 20px;
+}
+.third-party-login{
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+/* .mat-form-field-infix{
+  border-top: .5em solid transparent;
+}
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 1.0em;
+} */
+.form-container h6{
+  margin-top: 16px;
+}
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background{
+  background: var(--color-primary);
+}
+.btn-theme{
+  background-color: var(--color-primary)!important;
+  border-radius: 26px !important;
+  padding: 3px 16px !important;
+}

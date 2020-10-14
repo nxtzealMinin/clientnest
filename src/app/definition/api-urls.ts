@@ -1,0 +1,13 @@
+export const BASE_URL = '/api/';
+export const USER_CREATE = 'user_create.php';
+export const LOGIN = 'login.php';
+export const VERIFY_EMAIL = 'verify_email.php';
+export const SEND_VERIFICATION = 'send_verification_code.php';
+export const ADD_CLIENT = 'add_clients.php';
+export const EDIT_CLIENT = 'edit_clients.php';
+export const LIST_CLIENT = 'list_clients.php';
+export const ADD_FOLLOWUP = 'add_followup.php';
+export const LIST_FOLLOWUP = 'list_followup.php';
+export const EDIT_FOLLOWUP = 'edit_followup.php';
+export const DELETE_FOLLOWUP = 'delete_followup.php';
+export const RESET_PWD = 'user_pwd_reset.php';

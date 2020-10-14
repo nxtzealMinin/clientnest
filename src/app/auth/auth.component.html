@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="row h-100vh">
+    <div class="col d-flex justify-content-center align-items-center ">
+      <div class="box-container shadow">
+        <div class="row m-0">
+          <div class="col-sm-6 p-0">
+            <div class="brand-container theme-bg d-flex h-100 align-items-center justify-content-center">
+              <img src="../../assets/images/logo_svgInvert.svg">
+            </div>
+          </div>
+          <div class="col-sm-6 p-3">
+            <!-- =========================================================== -->
+                          <!-- login form -->
+            <!-- =========================================================== -->
+            <div id="login-form" *ngIf="showLogin" class="form-container">
+              <h6 class="theme-text text-center">Sign into your account</h6>
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()" novalidate >
+                <mat-form-field class="w-100">
+                  <mat-label>Your email</mat-label>
+                  <input matInput formControlName="EMAIL_ID" placeholder="Ex. pat@example.com">
+                </mat-form-field>
+                <mat-form-field  class="w-100">
+                  <mat-label>Password</mat-label>
+                  <input formControlName="PASSWORD" matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <div class="d-flex justify-content-between">
+                  <mat-checkbox>Remember Me</mat-checkbox>
+                  <a slot="end" href="javascript:void(0)" (click)="onShowReset()">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn-theme w-100 mt-3 text-uppercase" mat-raised-button color="primary">Sign In</button>
+              </form>
+              <div class="text-wrap small-text text-center mt-3">
+                <label>Don't have an account? <a href="javacript:void(0)" (click)="onShowSignup()">Signup</a></label>
+              </div>
+              <div class="third-party-login mb-3">
+                <label class="d-flex justify-content-center m-0">Login with <a href="javacript:void(0)" class="icon-link" (click)="fbLogin()"><img src="../../assets/images/icons/facebook-color.svg" alt="fb logo"></a> or  <a href="javacript:void(0)" class="icon-link" (click)="googleLogin()"><img src="../../assets/images/icons/google-color.svg" alt="fb logo"></a></label>
+              </div>
+            </div>
+            <!-- =========================================================== -->
+            <!-- signup form -->
+            <!-- =========================================================== -->
+            <div id="signup-form" *ngIf="showSignup" class="form-container ion-padding">
+              <h6 class="theme-text text-center">Create your account</h6>
+              <form [formGroup]="signupForm" (ngSubmit)="onSignup()" novalidate >
+                <mat-form-field class="w-100">
+                  <mat-label>Your email</mat-label>
+                  <input matInput formControlName="EMAIL_ID" placeholder="Ex. pat@example.com">
+                </mat-form-field>
+                <mat-form-field  class="w-100">
+                  <mat-label>Password</mat-label>
+                  <input formControlName="PASSWORD"  matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <mat-form-field  class="w-100">
+                  <mat-label>Confirm Password</mat-label>
+                  <input formControlName="CONFIRM_PASSWORD"  matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <button type="submit" class="btn-theme w-100 mt-3 text-uppercase" mat-raised-button color="primary">Sign Up</button>
+              </form>
+              <div class="text-wrap small-text text-center mt-3">
+                <label>Already have an account? <a href="javacript:void(0)" (click)="onShowLogin()">Sign In</a></label>
+              </div>
+              <div class="third-party-login mb-3">
+                <label class="d-flex justify-content-center m-0">Login with <a href="javacript:void(0)" class="icon-link" (click)="fbLogin()"><img src="../../assets/images/icons/facebook-color.svg" alt="fb logo"></a> or  <a href="javacript:void(0)" class="icon-link" (click)="googleLogin()"><img src="../../assets/images/icons/google-color.svg" alt="fb logo"></a></label>
+              </div>
+            </div>
+
+            <!-- =========================================================== -->
+            <!-- reset form -->
+            <!-- =========================================================== -->
+            <div id="reset-form" *ngIf="showReset" class="form-container ion-padding">
+              <h6 class="theme-text ion-text-center">Reset Your password</h6>
+              <form [formGroup]="restForm" (ngSubmit)="onReset()" novalidate >
+                <mat-form-field class="w-100">
+                  <mat-label>Enter Your Registered Email</mat-label>
+                  <input matInput formControlName="EMAIL_ID" placeholder="Ex. pat@example.com">
+                </mat-form-field>
+                <button *ngIf="!showVerification" [disabled]="restForm.get('EMAIL_ID').invalid" type="button" class="btn-theme w-100 mt-3 text-uppercase text-white" mat-raised-button color="primary" (click)="submitEmail()">Sign Up</button>
+                <div *ngIf="showVerification" class="verification-div ion-margin-bottom">
+                  <label>We sent verification code to your email.</label>
+                  <mat-form-field class="w-100">
+                    <mat-label>Verification Code</mat-label>
+                    <input matInput formControlName="VERIFICATION_CODE">
+                  </mat-form-field>
+                  <mat-form-field class="w-100">
+                    <mat-label>New Password</mat-label>
+                    <input matInput formControlName="NEW_PASSWORD" type="password">
+                  </mat-form-field>
+                  <mat-form-field class="w-100">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput formControlName="CONFIRM_PASSWORD" type="password">
+                  </mat-form-field>
+                  <button type="submit" class="btn-theme w-100 mt-3 mb-3 text-uppercase" mat-raised-button color="primary">Reset Now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

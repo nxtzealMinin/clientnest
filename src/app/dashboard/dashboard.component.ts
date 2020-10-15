@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  opened = true;
+  mode = 'side';
+  innerWidth;
   constructor() { }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 768) {
+      this.opened = false;
+      this.mode = 'push';
+    }
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 768) {
+      this.opened = false;
+      this.mode = 'push';
+    } else {
+      this.opened = true;
+      this.mode = 'side';
+    }
   }
 
 }

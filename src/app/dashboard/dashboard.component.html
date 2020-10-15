@@ -1,11 +1,10 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" opened>
-    <a href="javascript:void(0)" routerLinkActive="active" class="icon-button" routerLink="/dashboard/clients">Clients</a>
-    <a href="javascript:void(0)" routerLinkActive="active" class="icon-button" routerLink="/dashboard/tasks">Tasks</a>
-    <a href="javascript:void(0)" routerLinkActive="active" class="icon-button" routerLink="/dashboard/todo">Todo</a>
+<mat-sidenav-container class="example-container h-100">
+  <mat-sidenav #sidenav [(mode)]="mode" [(opened)]="opened">
+    <!-- sidebar -->
+    <app-sidenav></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <button mat-icon-button color="accent" (click)="sidenav.toggle()"  aria-label="Example icon button with a menu icon">
+    <button mat-icon-button color="accent" (click)="sidenav.toggle()"  aria-label="Icon button with a menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <router-outlet></router-outlet>

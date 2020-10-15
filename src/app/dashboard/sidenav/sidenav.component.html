@@ -1,0 +1,26 @@
+<div class="sidebar p-3 shadow">
+  <!-- logo should be dynamic -->
+  <div class="sidebar-logo">
+    <img src="../../assets/images/final_V3.svg">
+  </div>
+  <div class="navs">
+    <a href="javascript:void(0)" routerLinkActive="active" class="icon-button" routerLink="/dashboard/clients">
+      <span class="img-icon shadow"><img src="../../assets/images/icons/clients.svg" alt="icon" width="100%"></span>
+      <span>Clients</span>
+    </a>
+    <a href="javascript:void(0)" routerLinkActive="active" class="icon-button" routerLink="/dashboard/tasks">
+      <span class="img-icon shadow"><img src="../../assets/images/icons/tasks.svg" alt="icon" width="100%"></span>
+      <span>Tasks</span>
+    </a>
+
+    <a href="javascript:void(0)" routerLinkActive="active" class="icon-button" routerLink="/dashboard/todo">
+      <span class="img-icon shadow"><img src="../../assets/images/icons/todo.svg" alt="icon"></span>
+      <span>Todo</span>
+    </a>
+    <!-- <a href="javascript:void(0)"class="icon-button" routerLink="/auth"> -->
+    <a href="javascript:void(0)" class="icon-button" (click)="onLogout()">
+      <span class="img-icon shadow"><img src="../../assets/images/icons/logout.svg" alt="icon"></span>
+      <span>Logout</span>
+    </a>
+  </div>
+</div>

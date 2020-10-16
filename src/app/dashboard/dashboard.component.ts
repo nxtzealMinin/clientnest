@@ -9,6 +9,7 @@ export class DashboardComponent implements OnInit {
   opened = true;
   mode = 'side';
   innerWidth;
+  comp = false;
   constructor() { }
 
   ngOnInit(): void {

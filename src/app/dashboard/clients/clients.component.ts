@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { AddClientComponent } from './add-client/add-client.component';
+import { AddFollowupComponent } from './follow-up/add-followup/add-followup.component';
 
 @Component({
   selector: 'app-clients',
@@ -6,10 +9,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
+  name = 'minin';
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openAddClient(): void {
+    const dialogRef = this.dialog.open(AddClientComponent, {
+      width: '100%',
+      maxWidth: '350px',
+      data: {name: this.name} // you can pass data like this
+    });
+
+    // if you want to perform any functionalities after closing dialogue box, else you can remove this
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  openAddFollowup(): void {
+    const dialogRef = this.dialog.open(AddFollowupComponent, {
+      width: '100%',
+      maxWidth: '350px',
+    });
+
+    // if you want to perform any functionalities after closing dialogue box, else you can remove this
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }

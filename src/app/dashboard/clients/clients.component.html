@@ -13,18 +13,18 @@
         <mat-icon>add</mat-icon>
       </button>
       <mat-menu #addOptions="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="openAddFollowup()">
           <mat-icon>subtitles</mat-icon>
           <span>Add Followup</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="openAddClient()">
           <mat-icon>people_alt</mat-icon>
           <span>Add Client</span>
         </button>
       </mat-menu>
       <mat-card class="client-card">
         <div>
-         <h6>Johny Walker <span class="badge">$7,70,000</span></h6>
+          <h6>Johny Walker <span class="badge">$7,70,000</span></h6>
         </div>
         <label class="w-100">
           <small class="client-meta d-flex">
@@ -84,7 +84,7 @@
         </div>
         <div class="d-flex justify-content-end align-items-center pt-2">
           <p class="mb-0 mr-2">Details</p>
-          <button mat-mini-fab><mat-icon>arrow_forward</mat-icon></button>
+          <button mat-mini-fab [routerLink]="'/dashboard/clients/follow-up'"><mat-icon>arrow_forward</mat-icon></button>
         </div>
       </mat-card>
     </div>

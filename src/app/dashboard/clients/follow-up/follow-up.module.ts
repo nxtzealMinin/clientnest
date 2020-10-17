@@ -11,22 +11,24 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule} from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 
-import { ClientsRoutingModule } from './clients-routing.module';
-import { ClientsComponent } from './clients.component';
-import { AddClientComponent } from './add-client/add-client.component';
+import { FollowUpRoutingModule } from './follow-up-routing.module';
+import { FollowUpComponent } from './follow-up.component';
+import { AddFollowupComponent } from './add-followup/add-followup.component';
 
 
 @NgModule({
-  declarations: [ClientsComponent, AddClientComponent],
+  declarations: [FollowUpComponent, AddFollowupComponent],
   imports: [
     CommonModule,
+    FollowUpRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    ClientsRoutingModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
@@ -34,9 +36,11 @@ import { AddClientComponent } from './add-client/add-client.component';
     MatCardModule,
     MatMenuModule,
     MatDialogModule,
-    MatNativeDateModule,
     MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatDividerModule,
     MatSelectModule
   ]
 })
-export class ClientsModule { }
+export class FollowUpModule { }

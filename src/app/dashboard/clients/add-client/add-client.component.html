@@ -1,0 +1,33 @@
+<div>
+  <h6 class="theme-text text-center">Add Client Detail</h6>
+  <button class="form-close" mat-mini-fab [mat-dialog-close]="true"><mat-icon>close</mat-icon></button>
+</div>
+
+<form [formGroup]="clientForm" novalidate (ngSubmit)="onAddClient()">
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Client Name</mat-label>
+    <input matInput formControlName="CLIENT_NAME" type="text" placeholder="Name" value="{{data.name}}">
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Client Email</mat-label>
+    <input matInput formControlName="CLIENT_EMAIL" type="email">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Client Phone</mat-label>
+    <input matInput formControlName="CLIENT_PHONE" type="tel">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Client Location</mat-label>
+    <input matInput formControlName="CLIENT_LOCATION" type="text" clearInput="true">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Project Type</mat-label>
+    <input matInput formControlName="PROJECT_TYPE" type="text" clearInput="true">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Project Value</mat-label>
+    <input matInput formControlName="PROJECT_VALUE" type="number" clearInput="true">
+  </mat-form-field>
+  <button type="submit" class="btn-theme w-100 mt-3 text-uppercase" mat-raised-button color="primary">Add Now</button>
+</form>

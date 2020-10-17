@@ -3,7 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ClientsComponent } from './clients.component';
 
-const routes: Routes = [{ path: '', component: ClientsComponent }];
+const routes: Routes = [
+  { path: '', component: ClientsComponent },
+  { path: 'follow-up', loadChildren: () => import('./follow-up/follow-up.module').then(m => m.FollowUpModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,0 +1,46 @@
+<div>
+  <h6 class="theme-text text-center">Add Followup</h6>
+  <button class="form-close" mat-mini-fab [mat-dialog-close]="true"><mat-icon>close</mat-icon></button>
+</div>
+<form [formGroup]="followupForm" novalidate>
+  <mat-form-field class="w-100" appearance="legacy">
+    <mat-label>Date</mat-label>
+    <input matInput formControlName="FOLLOW_DATE" [matDatepicker]="picker2" (click)="picker2.open()">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label>Time</mat-label>
+    <input matInput formControlName="FOLLOW_TIME" type="text" value="">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Client Name</mat-label>
+    <input matInput formControlName="CLIENT_NAME" type="text" placeholder="Name">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label position="floating">Description</mat-label>
+    <input matInput formControlName="FOLLOW_DESC" type="text" placeholder="Name">
+  </mat-form-field>
+  <mat-label>Remind Me Before</mat-label>
+  <div class="d-flex justify-content-between pt-2" formGroupName="REMINDER_BEFORE">
+    <mat-checkbox formControlName="TIME_1">15min</mat-checkbox>
+    <mat-checkbox formControlName="TIME_2">25min</mat-checkbox>
+    <mat-checkbox formControlName="TIME_3">30min</mat-checkbox>
+  </div>
+  <mat-divider class="mb-2"></mat-divider>
+  <mat-label>Notify Via</mat-label>
+  <div class="d-flex justify-content-between pt-2" formGroupName="NOTIFY_VIA">
+    <mat-checkbox formControlName="SMS">SMS</mat-checkbox>
+    <mat-checkbox formControlName="EMAIL">Email</mat-checkbox>
+  </div>
+  <mat-divider class="mb-2"></mat-divider>
+  <mat-form-field class="w-100" appearance="legacy">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="FOLLOW_STATUS">
+      <mat-option value="option">Pending</mat-option>
+      <mat-option value="option">Processing</mat-option>
+      <mat-option value="option">Completed</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" class="btn-theme w-100 mt-3 text-uppercase" mat-raised-button color="primary">Add Now</button>
+</form>

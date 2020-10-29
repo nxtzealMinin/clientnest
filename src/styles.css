@@ -172,7 +172,7 @@ mat-sidenav {
 }
 .hamburger{
   position: absolute !important;
-  left: 0;
+  left: 16px;
   top: 13px;
   z-index: 111;
   display: none !important;
@@ -238,6 +238,10 @@ div.card-content p.title{
   width: 50px;
   display: flex;
 }
+.tasks-card .followup-card > div.actions{
+  width: 75px;
+  display: flex;
+}
 .followup-card {
   border-color: var(--color-primary);
 }
@@ -285,6 +289,82 @@ div.card-content p.title{
   right: 10px;
   top: 10px;
 }
+.table-container {
+  max-width: 100%;
+  overflow: auto;
+}
+
+table:not(.mat-calendar-table) {
+  min-width: 400px;
+}
+
+td.mat-column-select, td.mat-column-actions {
+width: 20px;
+}
+td.mat-column-comment{
+  min-width: 230px;
+}
+td.mat-cell:last-of-type{
+  padding-right: unset !important;
+}
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+  padding-left: 15px !important;
+}
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+  padding-right: 15px;
+  padding-left: 15px !important;
+}
+.table-actions .mat-icon{
+  font-size: 18px;
+  color: var(--color-primary)
+}
+.pos-relative{
+  position: relative;
+}
+.multi-delete{
+  position: absolute !important;
+  top: -5px;
+  left: 0;
+}
+.task-meta > p{
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px 0 15px;
+  margin: 0;
+}
+.task-meta > p > span:first-child{
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.task-content{
+  width: 100%;
+}
+.task-content p{
+  margin: 0;
+}
+.task-content > div:first-child{
+  flex-grow: 1;
+}
+.task-content > div:first-child div:last-child{
+  padding-left: 30px;
+}
+p.strong{
+  font-weight: 500;
+}
+p.light{
+  font-weight: 100;
+}
+.tasks-card-list .mat-card{
+  margin-bottom: 10px;
+  padding: 12px 10px 8px !important;
+}
 @media only screen and (max-width: 600px) {
   .client-meta{
     flex-direction: column;
@@ -293,7 +373,11 @@ div.card-content p.title{
     display: inline-block !important;
   }
   .mat-toolbar {
-    padding-left: 43px !important;
+    padding-left: 65px !important;
     height: 66px !important;
   }
 }
+
+
+
+

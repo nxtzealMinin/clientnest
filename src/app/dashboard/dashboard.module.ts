@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
+
+
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { MaterialModule } from '../material.module';
 
 
 @NgModule({
@@ -17,9 +17,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     CommonModule,
     DashboardRoutingModule,
     MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule
+    MaterialModule
   ]
 })
 export class DashboardModule { }

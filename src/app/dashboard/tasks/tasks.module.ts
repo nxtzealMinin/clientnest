@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/material.module';
 
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TasksComponent } from './tasks.component';
@@ -9,7 +11,10 @@ import { TasksComponent } from './tasks.component';
   declarations: [TasksComponent],
   imports: [
     CommonModule,
-    TasksRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    TasksRoutingModule,
+    MaterialModule,
   ]
 })
 export class TasksModule { }

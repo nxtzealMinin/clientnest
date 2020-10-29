@@ -19,7 +19,7 @@ export class ClientsComponent implements OnInit {
   openAddClient(): void {
     const dialogRef = this.dialog.open(AddClientComponent, {
       width: '100%',
-      maxWidth: '350px',
+      maxWidth: '400px',
       data: {name: this.name} // you can pass data like this
     });
 
@@ -32,7 +32,7 @@ export class ClientsComponent implements OnInit {
   openAddFollowup(): void {
     const dialogRef = this.dialog.open(AddFollowupComponent, {
       width: '100%',
-      maxWidth: '350px',
+      maxWidth: '400px',
     });
 
     // if you want to perform any functionalities after closing dialogue box, else you can remove this

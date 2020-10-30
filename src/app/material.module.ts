@@ -14,6 +14,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   exports: [
@@ -31,7 +32,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDividerModule,
     MatSelectModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatListModule
   ]
 })
 export class MaterialModule { }

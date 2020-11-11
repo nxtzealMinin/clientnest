@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule) },
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'landing',
     pathMatch: 'full'
   },
 ];

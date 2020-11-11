@@ -10,7 +10,7 @@ a{
   text-decoration: none !important;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: var(--theme-font) }
+body { margin: 0; font-family: var(--theme-font); overflow-x: hidden; }
 h4{
   font-size: 20px;
 }
@@ -35,6 +35,9 @@ h4{
 
 body{
   line-height: 1.6;
+  /* font-size: 1.2rem; */
+}
+.bigger-texts p{
   font-size: 1.2rem;
 }
 li{
@@ -276,11 +279,11 @@ button:focus{
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  border: 1px solid var(--ion-color-primary);
+  border: 1px solid var(--color-primary);
   transition: all 0.45s ease-in;
 }
 .social-links li:hover{
-  background-color: var(--ion-color-primary);
+  background-color: var(--color-primary);
 }
 .social-links li:hover img{
   filter: invert();
@@ -548,6 +551,16 @@ p.light{
 .tasks-card-list .mat-card{
   margin-bottom: 10px;
   padding: 12px 10px 8px !important;
+}
+.cdk-overlay-pane{
+  overflow: auto !important;
+}
+/* .mat-form-field-infix {
+  border-top: 0 solid transparent !important;
+} */
+.subscribe{
+  max-width: 400px;
+  margin: auto;
 }
 @media only screen and (max-width: 600px) {
   .client-meta{

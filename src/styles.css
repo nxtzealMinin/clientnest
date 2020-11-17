@@ -562,6 +562,16 @@ p.light{
   max-width: 400px;
   margin: auto;
 }
+.mat-card-content p{
+  font-size: 1rem;
+  text-align: center;
+}
+.carousel-dots .carousel-dot{
+  border: 1px solid var(--color-primary) !important;
+}
+.carousel-dots .carousel-dot-active{
+  background-color: var(--color-primary) !important;
+}
 @media only screen and (max-width: 600px) {
   .client-meta{
     flex-direction: column;

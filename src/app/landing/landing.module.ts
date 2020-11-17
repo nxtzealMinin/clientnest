@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './landing.component';
 import { MaterialModule } from '../material.module';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MaterialModule } from '../material.module';
   imports: [
     CommonModule,
     LandingRoutingModule,
-    MaterialModule
+    MaterialModule,
+    IvyCarouselModule
   ]
 })
 export class LandingModule { }
